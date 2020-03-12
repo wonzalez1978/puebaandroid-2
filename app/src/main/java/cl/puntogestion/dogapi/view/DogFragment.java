@@ -1,4 +1,4 @@
-package cl.puntogestion.dogapi;
+package cl.puntogestion.dogapi.view;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,6 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
+
+import cl.puntogestion.dogapi.presenter.Presenter;
+import cl.puntogestion.dogapi.R;
 
 public class DogFragment extends Fragment implements Presenter.Notificador {
 

@@ -1,6 +1,4 @@
-package cl.puntogestion.dogapi.api;
-
-import java.util.List;
+package cl.puntogestion.dogapi.model.api;
 
 
 import cl.puntogestion.dogapi.model.RazasLista;

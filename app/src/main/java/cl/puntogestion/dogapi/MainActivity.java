@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import java.util.List;
 
+import cl.puntogestion.dogapi.view.DogFragment;
+
 public class MainActivity extends AppCompatActivity implements DogFragment.OnListFragmentInteractionListener {
 
     @Override

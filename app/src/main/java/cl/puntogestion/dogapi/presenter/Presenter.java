@@ -1,19 +1,17 @@
-package cl.puntogestion.dogapi;
-
-import android.util.Log;
+package cl.puntogestion.dogapi.presenter;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import cl.puntogestion.dogapi.api.IDogDataBase;
-import cl.puntogestion.dogapi.api.RetrofitClient;
+import cl.puntogestion.dogapi.model.api.IDogDataBase;
+import cl.puntogestion.dogapi.model.api.RetrofitClient;
 import cl.puntogestion.dogapi.model.RazasLista;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Presenter {
+public class Presenter implements IPresenter{
 
     Notificador notificador;
 
@@ -21,7 +19,8 @@ public class Presenter {
         this.notificador = notificador;
     }
 
-    public List<String> llamado(){
+    @Override
+    public void loadBreeds() {
         IDogDataBase servicio = RetrofitClient.getRetrofitInstance().create(IDogDataBase.class);
 
         Call<RazasLista> listCall = servicio.listaRazas();
@@ -31,13 +30,13 @@ public class Presenter {
             @Override
             public void onResponse(Call<RazasLista> call, Response<RazasLista> response) {
                 RazasLista listaRazas = response.body();
-                Map<String, List<String>> mapa =  listaRazas.getMessage();
+                Map<String, List<String>> mapa = listaRazas.getMessage();
 
-                for (String key: mapa.keySet()) {
-                    if (mapa.get(key).isEmpty()){
+                for (String key : mapa.keySet()) {
+                    if (mapa.get(key).isEmpty()) {
                         listaPerros.add(key);
-                    }else{
-                        for (String subRaza: mapa.get(key)){
+                    } else {
+                        for (String subRaza : mapa.get(key)) {
                             listaPerros.add(key + " " + subRaza);
                         }
                     }
@@ -52,9 +51,19 @@ public class Presenter {
 
             }
         });
-        return listaPerros;
     }
-     interface Notificador{
+
+    @Override
+    public void loadBreedImages(String raza) {
+
+    }
+
+    @Override
+    public void loadSubBreedImages(String raza, String subraza) {
+
+    }
+
+    public interface Notificador {
         void notificar(List<String> lista);
-     }
+    }
 }

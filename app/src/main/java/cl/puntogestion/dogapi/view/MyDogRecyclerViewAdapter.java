@@ -1,4 +1,4 @@
-package cl.puntogestion.dogapi;
+package cl.puntogestion.dogapi.view;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -8,12 +8,29 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import cl.puntogestion.dogapi.DogFragment.OnListFragmentInteractionListener;
+import cl.puntogestion.dogapi.R;
+import cl.puntogestion.dogapi.view.DogFragment.OnListFragmentInteractionListener;
 
 import java.util.List;
 
+/**
+ * Para crear un nuevo adapter
+ * 1: extender de RecyclerView.Adapter o de alguna de sus subclases
+ * 2: Definir el ViewHolder que será parte del adapter
+ * 3: El ViewHolder debe extender de RecyclerView.ViewHolder
+ * 3: implementar el método onCreateViewHolder
+ *  3.A: asignar el layout utilizado en el viewHolder
+ *  3.B: retornar una nueva instancia de ViewHolder
+ * 4: implementar el método onBindViewHolder
+ *  4.A: Dada la posición, obtener el valor a desplegar
+ *  4.B: Asignar el valor dentro del viewHolder
+ * 5: Implementar getItemCount devolviendo la cantidad de elementos disponibles
+ *
+ * 6: Definir el comportamiento del ViewHolder (asignar la información)
+ */
 public class MyDogRecyclerViewAdapter extends RecyclerView.Adapter<MyDogRecyclerViewAdapter.ViewHolder> {
 
+    private static final String TAG = "MyDogRecyclerViewAdapte";
     private final List<String> mValues;
     private final OnListFragmentInteractionListener mListener;
 
