@@ -95,6 +95,6 @@ public class DogFragment extends Fragment implements Presenter.Notificador {
     }
 
     public interface OnListFragmentInteractionListener {
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(List<String> lista);
     }
 }
