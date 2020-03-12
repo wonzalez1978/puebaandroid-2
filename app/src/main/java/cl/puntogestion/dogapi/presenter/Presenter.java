@@ -13,10 +13,10 @@ import retrofit2.Response;
 
 public class Presenter implements IPresenter{
 
-    Notificador notificador;
+    IPresenterViewList IPresenterViewList;
 
-    public Presenter(Notificador notificador) {
-        this.notificador = notificador;
+    public Presenter(IPresenterViewList IPresenterViewList) {
+        this.IPresenterViewList = IPresenterViewList;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Presenter implements IPresenter{
 
                 }
                 //Log.i("Valor", ""+listaPerros);
-                notificador.notificar(listaPerros);
+                IPresenterViewList.notificar(listaPerros);
             }
 
             @Override
@@ -63,7 +63,7 @@ public class Presenter implements IPresenter{
 
     }
 
-    public interface Notificador {
+    public interface IPresenterViewList {
         void notificar(List<String> lista);
     }
 }

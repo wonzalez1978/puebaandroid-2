@@ -18,7 +18,7 @@ import java.util.List;
 import cl.puntogestion.dogapi.presenter.Presenter;
 import cl.puntogestion.dogapi.R;
 
-public class DogFragment extends Fragment implements Presenter.Notificador {
+public class ListDogFragment extends Fragment implements Presenter.IPresenterViewList {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -32,11 +32,11 @@ public class DogFragment extends Fragment implements Presenter.Notificador {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public DogFragment() {
+    public ListDogFragment() {
     }
 
-    public static DogFragment newInstance(int columnCount) {
-        DogFragment fragment = new DogFragment();
+    public static ListDogFragment newInstance(int columnCount) {
+        ListDogFragment fragment = new ListDogFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -67,7 +67,7 @@ public class DogFragment extends Fragment implements Presenter.Notificador {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
             Presenter presentador = new Presenter(this);
-            presentador.llamado();
+            presentador.loadBreeds();
         }
         return view;
     }

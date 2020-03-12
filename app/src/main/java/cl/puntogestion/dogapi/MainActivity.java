@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import java.util.List;
 
-import cl.puntogestion.dogapi.view.DogFragment;
+import cl.puntogestion.dogapi.view.ListDogFragment;
 
-public class MainActivity extends AppCompatActivity implements DogFragment.OnListFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements ListDogFragment.OnListFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

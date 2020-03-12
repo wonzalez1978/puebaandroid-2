@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import cl.puntogestion.dogapi.R;
-import cl.puntogestion.dogapi.view.DogFragment.OnListFragmentInteractionListener;
+import cl.puntogestion.dogapi.view.ListDogFragment.OnListFragmentInteractionListener;
 
 import java.util.List;
 
