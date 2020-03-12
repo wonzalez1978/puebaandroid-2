@@ -1,5 +1,7 @@
 package cl.puntogestion.dogapi.presenter;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -12,21 +14,25 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Presenter implements IPresenter{
+public class Presenter implements IPresenter, IPresenterModel{
 
+    private static final String TAG = "Presenter";
     IModel imodel;
     IPresenterViewList iPresenterViewList;
 
 
-    public Presenter(IPresenterViewList iPresenterViewList, IModel imodel) {
+    public Presenter(IPresenterViewList iPresenterViewList) {
         this.iPresenterViewList = iPresenterViewList;
-        this.imodel = imodel;
 
+    }
+
+    public void setImodel(IModel imodel) {
+        this.imodel = imodel;
     }
 
     @Override
     public void loadBreeds() {
-
+        imodel.loadBreeds();
     }
 
     @Override
@@ -37,6 +43,11 @@ public class Presenter implements IPresenter{
     @Override
     public void loadSubBreedImages(String raza, String subraza) {
 
+    }
+
+    @Override
+    public void notificar(List<String> breeds) {
+        Log.d(TAG, breeds.toString());
     }
 
     public interface IPresenterViewList {

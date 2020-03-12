@@ -8,13 +8,20 @@ import java.util.Map;
 
 import cl.puntogestion.dogapi.model.api.IDogDataBase;
 import cl.puntogestion.dogapi.model.api.RetrofitClient;
+import cl.puntogestion.dogapi.presenter.IPresenterModel;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class BreedModel implements IModel {
 
-private static final String TAG = "breedModel";
+    IPresenterModel iPresenterModel;
+
+    public BreedModel(IPresenterModel iPresenterModel) {
+        this.iPresenterModel = iPresenterModel;
+    }
+
+    private static final String TAG = "breedModel";
     @Override
     public void loadBreeds() {
         IDogDataBase servicio = RetrofitClient.getRetrofitInstance().create(IDogDataBase.class);
@@ -39,7 +46,7 @@ private static final String TAG = "breedModel";
 
                 }
                 //Log.i("Valor", ""+listaPerros);
-         //TODO       IPresenterViewList.notificar(listaPerros);
+          iPresenterModel.notificar(listaPerros);
             }
 
             @Override
