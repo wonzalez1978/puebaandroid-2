@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import cl.puntogestion.dogapi.model.BreedModel;
 import cl.puntogestion.dogapi.presenter.Presenter;
 import cl.puntogestion.dogapi.R;
 
@@ -66,7 +67,7 @@ public class ListDogFragment extends Fragment implements Presenter.IPresenterVie
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            Presenter presentador = new Presenter(this);
+            Presenter presentador = new Presenter(this, new BreedModel());
             presentador.loadBreeds();
         }
         return view;
