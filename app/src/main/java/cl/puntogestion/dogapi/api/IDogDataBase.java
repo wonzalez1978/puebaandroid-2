@@ -9,5 +9,5 @@ import retrofit2.http.GET;
 
 public interface IDogDataBase {
     @GET("api/breeds/list/all")
-    Call<List<RazasLista>> listaRazas();
+    Call<RazasLista> listaRazas();
 }
