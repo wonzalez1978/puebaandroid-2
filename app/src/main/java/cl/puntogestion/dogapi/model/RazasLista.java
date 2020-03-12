@@ -5,5 +5,14 @@ import java.util.Map;
 
 public class RazasLista {
 
-    private Map<String, List<String>> razas;
+    private String status;
+    private Map<String, List<String>> message;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public Map<String, List<String>> getMessage() {
+        return message;
+    }
 }
