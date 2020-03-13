@@ -10,6 +10,7 @@ import retrofit2.http.Path;
 public interface IDogDataBase {
     @GET("api/breeds/list/all")
     Call<RazasLista> listaRazas();
+
     @GET("api/breed/{breed}/images")
-    Call<RazaImagen> listaImagenes(@Path("breed")String breed);
+    Call<RazaImagen> listaImagenes(@Path("breed") String breed);
 }
