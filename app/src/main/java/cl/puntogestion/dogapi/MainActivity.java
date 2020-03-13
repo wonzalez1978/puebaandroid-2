@@ -15,8 +15,9 @@ public class MainActivity extends AppCompatActivity implements ListDogFragment.O
         setContentView(R.layout.activity_main);
     }
 
+
     @Override
-    public void onListFragmentInteraction(List<String> lista) {
+    public void onListFragmentInteraction(String lista) {
 
     }
 }

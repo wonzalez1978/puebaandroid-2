@@ -56,7 +56,8 @@ public class MyDogRecyclerViewAdapter extends RecyclerView.Adapter<MyDogRecycler
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
-                    //mListener.onListFragmentInteraction(holder.mItem);
+                    mListener.onListFragmentInteraction(mValues.get(position));
+                    Log.d(TAG, mValues.get(position));
                 }
             }
         });

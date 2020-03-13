@@ -100,6 +100,9 @@ public class ListDogFragment extends Fragment implements Presenter.IPresenterVie
     }
 
     public interface OnListFragmentInteractionListener {
-        void onListFragmentInteraction(List<String> lista);
+        void onListFragmentInteraction(String lista);
+
     }
-}
+
+    }
+
