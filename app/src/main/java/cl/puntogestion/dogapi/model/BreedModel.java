@@ -22,6 +22,7 @@ public class BreedModel implements IModel {
     }
 
     private static final String TAG = "breedModel";
+
     @Override
     public void loadBreeds() {
         IDogDataBase servicio = RetrofitClient.getRetrofitInstance().create(IDogDataBase.class);
@@ -46,7 +47,7 @@ public class BreedModel implements IModel {
 
                 }
                 //Log.i("Valor", ""+listaPerros);
-          iPresenterModel.notificar(listaPerros);
+                iPresenterModel.notificar(listaPerros);
             }
 
             @Override

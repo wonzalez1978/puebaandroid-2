@@ -68,7 +68,6 @@ public class ListDogFragment extends Fragment implements Presenter.IPresenterVie
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
             Presenter presentador = new Presenter(this);
-
             presentador.setImodel(new BreedModel(presentador));
             presentador.loadBreeds();
         }

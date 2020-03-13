@@ -14,7 +14,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Presenter implements IPresenter, IPresenterModel{
+public class Presenter implements IPresenter, IPresenterModel {
 
     private static final String TAG = "Presenter";
     IModel imodel;
@@ -48,6 +48,7 @@ public class Presenter implements IPresenter, IPresenterModel{
     @Override
     public void notificar(List<String> breeds) {
         Log.d(TAG, breeds.toString());
+        iPresenterViewList.notificar(breeds);
     }
 
     public interface IPresenterViewList {
